@@ -17,7 +17,6 @@ class WaterTrackingViewModel @ViewModelInject constructor(
 
     init {
         preferencesHelper.subscribeToWaterIntakeChanges(this)
-        _liveData.postValue(preferencesHelper.getWaterIntake())
     }
 
     override fun onCleared() {
