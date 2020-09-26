@@ -8,7 +8,7 @@ import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 
-@InstallIn(ActivityComponent::class)
+@InstallIn(FragmentComponent::class)
 @Module
 class WaterTrackingModule {
 

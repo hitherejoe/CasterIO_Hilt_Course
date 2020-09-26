@@ -7,9 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-class WaterTrackingViewModel @ViewModelInject constructor(
-    private val preferencesHelper: PreferencesHelper,
-    @Assisted private val savedStateHandle: SavedStateHandle
+class WaterTrackingViewModel constructor(
+    private val preferencesHelper: PreferencesHelper
 ): ViewModel(), WaterIntakePreferenceListener {
 
     private val _liveData = MutableLiveData<Int>()
@@ -17,7 +16,6 @@ class WaterTrackingViewModel @ViewModelInject constructor(
 
     init {
         preferencesHelper.subscribeToWaterIntakeChanges(this)
-        _liveData.postValue(preferencesHelper.getWaterIntake())
     }
 
     override fun onCleared() {

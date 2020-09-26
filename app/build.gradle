@@ -44,10 +44,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
     kapt 'com.google.dagger:hilt-android-compiler:2.28-alpha'
 
-    implementation "androidx.fragment:fragment-ktx:1.2.5"
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
