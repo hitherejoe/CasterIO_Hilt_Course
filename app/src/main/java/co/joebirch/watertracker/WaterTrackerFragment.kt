@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_water_tracker.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class WaterTrackerFragment: Fragment(), WaterIntakePreferenceListener {
+class WaterTrackerFragment: Fragment() {
 
-    @Inject
-    lateinit var preferencesHelper: PreferencesHelper
+    private val viewModel: WaterTrackingViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,21 +27,12 @@ class WaterTrackerFragment: Fragment(), WaterIntakePreferenceListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        waterCountText.text = preferencesHelper.getWaterIntake().toString()
+        viewModel.liveData.observe(viewLifecycleOwner, Observer {
+            waterCountText.text = it.toString()
+        })
 
         trackWaterButton.setOnClickListener {
-            preferencesHelper.incrementWaterIntake()
+            viewModel.incrementWaterIntake()
         }
-        preferencesHelper.subscribeToWaterIntakeChanges(this)
     }
-
-    override fun onDestroyView() {
-        preferencesHelper.unsubscribeFromWaterIntakeChanges()
-        super.onDestroyView()
-    }
-
-    override fun onWaterIntakeChanged(waterIntake: Int) {
-        waterCountText.text = waterIntake.toString()
-    }
-
 }
