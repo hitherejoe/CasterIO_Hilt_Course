@@ -15,6 +15,7 @@ import javax.inject.Inject
 class WaterTrackerFragment: Fragment() {
 
     private val viewModel: WaterTrackingViewModel by viewModels()
+    @Inject lateinit var logger: Logger
 
     override fun onCreateView(
         inflater: LayoutInflater,
