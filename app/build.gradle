@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "co.joebirch.watertracker.TestApplication"
+        testInstrumentationRunner "co.joebirch.watertracker.TestRunner"
     }
 
     buildTypes {
@@ -29,6 +29,8 @@ android {
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_1_8
         }
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -48,11 +50,14 @@ dependencies {
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    androidTestImplementation  'com.google.dagger:hilt-android-testing:2.28-alpha'
-    androidTestAnnotationProcessor 'com.google.dagger:hilt-android-compiler:2.28-alpha'
+    androidTestImplementation 'org.mockito:mockito-android:3.5.13'
+    androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.28-alpha'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.28-alpha'
 
 }

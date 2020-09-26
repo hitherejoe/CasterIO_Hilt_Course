@@ -4,20 +4,20 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
-class PreferencesHelper constructor(context: Context) {
+open class PreferencesHelper constructor(context: Context) {
 
     private val preferences = context.getSharedPreferences("water_tracker_prefs", MODE_PRIVATE)
     private val KEY_WATER_INTAKE = "KEY_WATER_INTAKE"
     private var waterIntakePreferenceListener: WaterIntakePreferenceListener? = null
 
-    fun getWaterIntake() = preferences.getInt(KEY_WATER_INTAKE, 0)
+    open fun getWaterIntake() = preferences.getInt(KEY_WATER_INTAKE, 0)
 
     fun incrementWaterIntake() {
         val waterIntake = preferences.getInt(KEY_WATER_INTAKE, 0)
         preferences.edit().putInt(KEY_WATER_INTAKE, waterIntake + 1).apply()
     }
 
-    fun subscribeToWaterIntakeChanges(listener: WaterIntakePreferenceListener) {
+    open fun subscribeToWaterIntakeChanges(listener: WaterIntakePreferenceListener) {
         this.waterIntakePreferenceListener = listener
         preferences.registerOnSharedPreferenceChangeListener(sharedPreferencesListener)
     }
