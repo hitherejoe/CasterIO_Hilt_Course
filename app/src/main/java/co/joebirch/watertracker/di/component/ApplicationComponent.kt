@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import co.joebirch.watertracker.WaterTrackerApplication
 import co.joebirch.watertracker.di.ApplicationModule
+import co.joebirch.watertracker.di.scope.ApplicationContext
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -23,5 +24,6 @@ interface ApplicationComponent {
 
     fun inject(activity: WaterTrackerApplication)
 
+    @ApplicationContext
     fun context(): Context
 }
