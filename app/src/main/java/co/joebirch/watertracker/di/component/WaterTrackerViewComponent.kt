@@ -1,6 +1,7 @@
 package co.joebirch.watertracker.di.component
 
 import co.joebirch.watertracker.WaterCountTextView
+import co.joebirch.watertracker.di.ApplicationContextModule
 import co.joebirch.watertracker.di.WaterTrackingModule
 import co.joebirch.watertracker.di.scope.ViewScope
 import dagger.Component
