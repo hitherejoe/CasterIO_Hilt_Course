@@ -5,9 +5,12 @@ import android.content.Context
 import co.joebirch.watertracker.Logger
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 
 @Module
+@InstallIn(ApplicationComponent::class)
 class ApplicationModule {
 
     @Singleton
