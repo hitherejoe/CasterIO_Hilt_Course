@@ -12,7 +12,7 @@ import dagger.hilt.migration.DisableInstallInCheck
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@DisableInstallInCheck
 class ApplicationModule {
 
     @ApplicationContext
