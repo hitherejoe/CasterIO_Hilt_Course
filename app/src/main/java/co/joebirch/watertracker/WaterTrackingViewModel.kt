@@ -1,15 +1,13 @@
 package co.joebirch.watertracker
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-class WaterTrackingViewModel @ViewModelInject constructor(
-    private val preferencesHelper: PreferencesHelper,
-    @Assisted private val savedStateHandle: SavedStateHandle
+class WaterTrackingViewModel constructor(
+    private val savedStateHandle: SavedStateHandle,
+    private val preferencesHelper: PreferencesHelper
 ): ViewModel(), WaterIntakePreferenceListener {
 
     private val _liveData = MutableLiveData<Int>()
