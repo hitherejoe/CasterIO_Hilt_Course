@@ -6,11 +6,13 @@ import co.joebirch.watertracker.Logger
 import co.joebirch.watertracker.di.scope.ApplicationContext
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.migration.DisableInstallInCheck
 import javax.inject.Singleton
 
 @Module
-@DisableInstallInCheck
+@InstallIn(ApplicationComponent::class)
 class ApplicationModule {
 
     @ApplicationContext

@@ -6,6 +6,7 @@ import co.joebirch.watertracker.di.component.DaggerApplicationComponent
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
+@HiltAndroidApp
 class WaterTrackerApplication: Application() {
 
     @Inject lateinit var logger: Logger
@@ -18,7 +19,6 @@ class WaterTrackerApplication: Application() {
             .builder()
             .application(this)
             .build()
-        appComponent.inject(this)
 
         logger.configure()
     }
