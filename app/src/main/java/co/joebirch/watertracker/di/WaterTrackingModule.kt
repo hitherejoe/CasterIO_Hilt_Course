@@ -7,9 +7,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.migration.DisableInstallInCheck
 
 @Module
-@InstallIn(ActivityComponent::class)
+@DisableInstallInCheck
 class WaterTrackingModule {
 
     @Provides
