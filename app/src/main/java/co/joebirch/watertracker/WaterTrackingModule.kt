@@ -1,6 +1,7 @@
 package co.joebirch.watertracker
 
 import android.content.Context
+import co.joebirch.watertracker.di.scope.ApplicationContext
 import dagger.Module
 import dagger.Provides
 
@@ -9,7 +10,7 @@ class WaterTrackingModule {
 
     @Provides
     fun providesPreferencesHelper(
-        context: Context
+        @ApplicationContext context: Context
     ) = PreferencesHelper(context)
 
 }
