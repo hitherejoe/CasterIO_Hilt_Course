@@ -1,6 +1,7 @@
-package co.joebirch.watertracker
+package co.joebirch.watertracker.di
 
 import android.content.Context
+import co.joebirch.watertracker.PreferencesHelper
 import co.joebirch.watertracker.di.scope.ApplicationContext
 import dagger.Module
 import dagger.Provides

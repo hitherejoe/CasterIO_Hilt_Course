@@ -1,8 +1,7 @@
 package co.joebirch.watertracker.di.component
 
 import co.joebirch.watertracker.WaterTrackerFragment
-import co.joebirch.watertracker.WaterTrackingModule
-import co.joebirch.watertracker.di.scope.ActivityScope
+import co.joebirch.watertracker.di.WaterTrackingModule
 import co.joebirch.watertracker.di.scope.FragmentScope
 import dagger.Component
 
