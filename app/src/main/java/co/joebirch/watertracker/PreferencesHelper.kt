@@ -3,7 +3,7 @@ package co.joebirch.watertracker
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import co.joebirch.watertracker.di.scope.ApplicationContext
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 open class PreferencesHelper @Inject constructor(@ApplicationContext context: Context) {

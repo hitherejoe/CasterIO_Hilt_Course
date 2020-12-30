@@ -3,9 +3,10 @@ package co.joebirch.watertracker
 import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
-import co.joebirch.watertracker.di.component.DaggerWaterTrackerViewComponent
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class WaterCountTextView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
@@ -15,15 +16,7 @@ class WaterCountTextView @JvmOverloads constructor(
     @Inject
     lateinit var preferencesHelper: PreferencesHelper
 
-    override fun onFinishInflate() {
-        super.onFinishInflate()
-        DaggerWaterTrackerViewComponent
-            .builder()
-            .applicationComponent(
-                (context.applicationContext as WaterTrackerApplication).appComponent
-            )
-            .build()
-            .inject(this)
+    init {
         text = preferencesHelper.getWaterIntake().toString()
     }
 }
