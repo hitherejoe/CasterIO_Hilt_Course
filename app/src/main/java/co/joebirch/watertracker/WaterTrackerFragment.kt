@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_water_tracker.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class WaterTrackerFragment: Fragment() {
 
+    @Inject
+    lateinit var logger: Logger
     private val viewModel: WaterTrackingViewModel by viewModels()
 
     override fun onCreateView(
