@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "co.joebirch.watertracker.TestApplication"
+        testInstrumentationRunner "co.joebirch.watertracker.TestRunner"
     }
 
     buildTypes {
