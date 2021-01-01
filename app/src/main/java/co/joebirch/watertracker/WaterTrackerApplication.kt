@@ -13,4 +13,5 @@ class WaterTrackerApplication: Application() {
         super.onCreate()
         logger.configure()
     }
+
 }
